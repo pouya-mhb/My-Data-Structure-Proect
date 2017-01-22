@@ -1,0 +1,431 @@
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>//system("cls");
+#include <stdio.h>
+#include <time.h> //clock,time,sleep
+#include <stdlib.h> // Rand()
+#include <Windows.h> // sleep () 
+#include <string> //strcpy
+#include <fstream> //write,read file
+#include <iomanip> //gotoxy
+
+using namespace std;
+
+void TryAgain();
+void BinarySearch()
+{
+	Sleep(200);
+	float t;
+	clock_t start = clock();
+
+	system("cls");
+	cout << "BinarySearch\n" << endl;
+	int a[10000], n, i, beg, end, mid, item;
+
+	cout << "\n------------ BINARY SEARCH ------------ \n\n";
+
+	for (i = 1; i <= 10000; i++)
+	{
+		srand(time(NULL));
+		a[i] = rand() % 10000 + 1;
+	}
+
+	cout << " Enter size of array you want to search (1-10000) : ";
+	cin >> n;
+	cout << "\n Orginally random datas : " << endl;
+	for (int j = 1; j <= n; j++)
+	{
+		srand(time(NULL));
+		a[j] = rand() % 10000 + 1;
+		cout << a[j] << endl;
+	}
+
+	cout << "\nEnter Item you want to Search= ";
+	cin >> item;
+
+	beg = 1;
+	end = a[NULL - 1];
+
+	mid = (beg + end) / 2;                       // Find Mid Location of Array
+
+	while (beg <= end && a[mid] != item)      // Compare Item and Value of Mid
+	{
+		if (a[mid]<item)
+			beg = mid + 1;
+		else
+			end = mid - 1;
+
+		mid = (beg + end) / 2;
+	}
+
+	if (a[mid] == item)
+	{
+		cout << "\nData is Found at Location : \n" << mid << "\n";
+	}
+	else
+	{
+		cout << "Data is Not Found \n";
+	}
+
+	t = ((double)clock() - start) / CLOCKS_PER_SEC;
+	cout << "\n\n Time elapsed : " << t << "second" << endl;
+	cin.get();
+	TryAgain();
+}
+
+void BubbleSort()
+{
+	system("cls");
+	int hold;
+	int array[10000];
+
+	int n;
+	cout << "Enter size of array : " << endl;
+	cin >> n;
+
+	for (int i = 0; i<n; i++)
+	{
+		srand(time(NULL));
+		array[i] = rand() % 10000 + 1;
+	}
+
+	cout << endl;
+	system("cls");
+	cout << "Orignally randoms data is: \n" << endl;
+	cin.get();
+
+	for (int j = 0; j<n; j++)
+	{
+		cout << array[j];
+		cout << " ";
+	}
+	cout << endl;
+
+	Sleep(300);
+	float t;
+	clock_t start = clock();
+	for (int i = 0; i<n; i++)
+	{
+		for (int j = 0; j<n; j++)
+		{
+			if (array[j]>array[j + 1])
+			{
+				hold = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = hold;
+			}
+		}
+	}
+
+	cout << "\n\n----------------------------------------------------------- \n\n";
+
+	ofstream fout("BubbleSort.txt"); //opening an output stream for file BubbleSort.txt
+									 /*checking whether file could be opened or not. If file does not exist or don't have write permissions, file
+									 stream could not be opened.*/
+	if (fout.is_open())
+	{
+		//file opened successfully so we are here
+		cout << "\n\nFile Opened successfully!!!"
+			<< " \nWriting data from array to file " << endl;
+		/*
+		for (int k = 0; k < 1000;k++)
+		{
+		cout << "...";
+		}
+		*/
+		Sleep(3000);
+		cout << "Sorted Array is: \n\n" << endl;
+		for (int i = 1; i < n; i++)
+		{
+			cout << array[i];
+			cout << " ";
+			fout << array[i] << endl;//writing ith character of array in the file
+		}
+		cout << "\nArray data successfully saved into the file BubbleSort.txt" << endl;
+	}
+	else //file could not be opened
+	{
+		cout << "\nFile could not be opened." << endl;
+	}
+
+	t = ((double)clock() - start) / CLOCKS_PER_SEC;
+	cout << "\n\n Time elapsed : " << t << "second" << endl;
+
+	cin.get();
+	TryAgain();
+}
+
+void LinearSearch()
+{
+	system("cls");
+	int arr[100000], i, num, n, c = 0, pos;
+	cout << "\n\nEnter the array size : ";
+	cin >> n;
+
+	for (i = 0; i<n; i++)
+	{
+		srand(time(NULL));
+		arr[i] = rand() % 100000 + 1;
+		cout << arr[i] << endl;
+	}
+
+	cout << "\nEnter the number to be search : ";
+	cin >> num;
+	for (i = 0; i<n; i++)
+	{
+		if (arr[i] == num)
+		{
+			c = 1;
+			pos = i + 1;
+			break;
+		}
+	}
+	if (c == 0)
+	{
+		cout << "Number not found..!!";
+	}
+	else
+	{
+		cout << num << " found at position " << pos;
+	}
+	cin.get();
+	TryAgain();
+}
+/*
+void QuickSort(int a[], int l, int u)
+{
+int a[10000], l, u, i, j;
+float t;
+void quick(int *, int, int);
+
+clock_t start = clock();
+cout << "enter 10 elements";
+for (i = 0; i < 10000; i++)
+srand(time(NULL));
+a[i] = rand() % 10000;
+l = 0;
+u = 9;
+quick(a, l, u);
+cout << "sorted elements : ";
+for (i = 0; i<10000; i++)
+cout << a[i] << " ";
+t = ((double)clock() - start) / CLOCKS_PER_SEC;
+printf("\n Time Elapsed %f Second", t);
+
+int p, temp;
+if (l < u)
+{
+p = a[l];
+i = l;
+j = u;
+while (i < j)
+{
+while (a[i] <= p && i < j)
+i++;
+while (a[j] > p && i <= j)
+j--;
+if (i <= j)
+{
+temp = a[i];
+a[i] = a[j];
+a[j] = temp;
+}
+}
+}
+cin.get();
+TryAgain();
+}
+*/
+void T1(int topN, char src, char aux, char dest)
+{
+	if (topN == 1)
+	{
+		cout << "\n Disk 1 from " << src << " to " << dest;
+	}
+	else
+	{
+		T1(topN - 1, src, dest, aux); //src to aux
+		cout << "\n Disk " << topN << " from " << src << " to " << dest;
+		T1(topN - 1, aux, src, dest); //aux to dest
+
+	}
+}
+
+void T1(int, char, char, char); /*prototype*/
+
+void ShowResult();
+
+void HanoiTower()
+{
+	system("cls");
+	// src = Source | aux = Auxiliry | dest = Destination
+	float t;
+	clock_t start = clock();
+	int ndisk;
+	system("cls");
+	cout << "\n Enter number of disks : ";
+	cin >> ndisk;
+	T1(ndisk, 'A', 'B', 'C');  /*Calling Function*/
+	t = ((double)clock() - start) / CLOCKS_PER_SEC;
+	cout << "\n Time elapsed : " << t << "second";
+
+	cin.get();
+	TryAgain();
+}
+
+void ShowResult()
+{
+	system("cls");
+	cout << "Try" << "		" << "Algorithm" << "		" << "Time" << "		";
+
+	cin.get();
+	TryAgain();
+}
+
+void DrawGraph()
+{
+	cin.get();
+	TryAgain();
+}
+
+void Menu()
+{
+	cout << "\n\n\n\n\n			!@#$%^&* MENU *&^%$#@!"
+		<< "\n\n		========================================"
+		<< endl << "		1- Binary Search		   "
+		<< endl << "		2- Bubble Sort			   "
+		<< endl << "		3- Linear Search		   "
+		<< endl << "		4- Quick Sort			   "
+		<< endl << "		5- Hanoi Tower			   "
+		<< endl << " 		6- Show Result             "
+		<< endl << "		7- Draw Graph              "
+		<< endl << "		8- Show Result and Draw graph"
+		<< endl << "		9- Exit					   "
+		<< endl << "		Please choose an item : ";
+
+	//int choose;
+	//choose = 1, choose = 2, choose = 3, choose = 4, choose = 5,choose=6;
+	int  choice;
+	cin >> choice;
+	if (true)
+	{
+		switch (choice)
+		{
+		case 1: BinarySearch();
+			break;
+		case 2: BubbleSort();
+			break;
+		case 3: LinearSearch();
+			break;
+		case 4:// QuickSort();
+			break;
+		case 5: HanoiTower();
+			break;
+		case 6: ShowResult();
+			break;
+		case 7: DrawGraph();
+			break;
+		case 8:
+		{
+			ShowResult();
+			DrawGraph();
+		}
+		case 9:
+			cin.get();
+			cout << endl << endl << "   Glad to use our application ;) \a" << endl << endl << endl << endl;
+			cin.get();
+			exit(0);
+			break;
+		default:
+			true;
+			break;
+		}
+	}
+
+	else
+	{
+		system("cls");
+		cout << "\n\n\n\n\n\n			Please Enter 1 to 6 !" << endl;
+		Menu();
+	}
+}
+
+void Menu2()
+{
+	system("cls");
+	cout << endl << "		1- Show result 		   "
+		<< endl << "		2- Draw Graph		   "
+		<< endl << "		3- show result and draw graph		 "
+		<< endl << "		4- exit			   "
+		<< endl;
+
+	int mhb;
+	cin >> mhb;
+	switch (mhb)
+	{
+	case 1: ShowResult();
+		break;
+	case 2: DrawGraph();
+		break;
+	case 3:
+	{
+		ShowResult();
+		DrawGraph();
+	}
+	break;
+	case 4:
+		cout << endl << endl << "   Glad to use our application ;) \a" << endl << endl << endl << endl;
+		exit(0);
+		break;
+
+	}
+}
+
+void TryAgain()
+{
+
+	char result;
+	cout << "\nWould you like to Try Again?(y/N): \a" << endl;
+	result = cin.get();
+
+	switch (result) {
+
+	case 121: // "Y"
+	case 89: // "y"
+		cout << "yes";
+
+		system("CLS");
+
+		Menu();
+		break;
+
+	case 78: // "N"
+	case 110: // "n"
+
+		cout << endl << "  no  " << endl << endl;
+		Menu2();
+
+
+	default:
+
+		TryAgain();
+
+		break;
+		cin.get();
+	}
+}
+
+int main()
+{
+	//system("color 43");
+	cout << "\n\n\n\n\n		Welcome to data structure application \n\n\n\n\n";
+	cin.get();
+	system("cls");
+	cout << "\n\n\n\n\n\n			This application made by \n\n			Pouya Mehrbabak \n\n			Danial Saleh\n\n			Ali Heidari \n ";
+	cin.get();
+	system("cls");
+	Menu();
+	cin.get();
+
+	return 0;
+}

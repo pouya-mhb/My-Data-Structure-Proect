@@ -1,0 +1,46 @@
+﻿Build started 11/19/2016 3:00:05 PM.
+     1>Project "C:\Users\pouya\Documents\Visual Studio 2015\Projects\Data Structure Project\Data Structure Project\Data Structure Project.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt DS.cpp
+         DS.cpp
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(99): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(50): warning C4101: 'end': unreferenced local variable
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(50): warning C4101: 'mid': unreferenced local variable
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(50): warning C4101: 'temp': unreferenced local variable
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(50): warning C4101: 'beg': unreferenced local variable
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(176): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(219): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(287): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(262): warning C4101: 'size': unreferenced local variable
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(321): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(423): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(474): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(524): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(499): warning C4101: 'i': unreferenced local variable
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(606): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(576): warning C4101: 'x': unreferenced local variable
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(628): warning C4129: 'P': unrecognized character escape sequence
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(616): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\conio.h(452): note: see declaration of 'getch'
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(621): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(623): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(625): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(627): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(638): warning C4129: 'P': unrecognized character escape sequence
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(663): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(766): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\conio.h(452): note: see declaration of 'getch'
+     1>c:\users\pouya\documents\visual studio 2015\projects\data structure project\data structure project\ds.cpp(43): warning C4715: 'search': not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\pouya\Documents\Visual Studio 2015\Projects\Data Structure Project\Debug\Data Structure Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\pouya\Documents\Visual Studio 2015\Projects\Data Structure Project\Debug\Data Structure Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\pouya\Documents\Visual Studio 2015\Projects\Data Structure Project\Debug\Data Structure Project.lib" /MACHINE:X86 Debug\DS.obj
+         Data Structure Project.vcxproj -> C:\Users\pouya\Documents\Visual Studio 2015\Projects\Data Structure Project\Debug\Data Structure Project.exe
+     1>Done Building Project "C:\Users\pouya\Documents\Visual Studio 2015\Projects\Data Structure Project\Data Structure Project\Data Structure Project.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.38
